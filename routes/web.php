@@ -15,16 +15,31 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
 
-Route::group(['prefix'=>'admin'],function() {
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ],
+    function() {
 
-    Route::get('/index', 'Admin\AdminController@index')->name('admin.index');
+        Route::group([
+                'prefix' => 'admin'
+            ],
 
-    Route::resource('settings','Admin\SettingController');
-    Route::resource('mainpagesettings','Admin\MainpageSettingController');
-    Route::resource('page','Admin\PageController');
-});
+            function () {
 
+                Route::get('/index', 'Admin\AdminController@index')->name('admin.index');
 
+               //Route::get(LaravelLocalization::transRoute('routes.settings'), 'Admin\AdminController@show')->name('admin.index');
+
+                Route::resource('settings', 'Admin\SettingController');
+                Route::resource('mainpagesettings', 'Admin\MainpageSettingController');
+                Route::resource('page', 'Admin\PageController');
+            }
+
+        );
+
+    });
 
 
 

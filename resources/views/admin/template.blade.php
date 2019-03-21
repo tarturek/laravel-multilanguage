@@ -24,12 +24,12 @@
 
 <body class="fixed-left">
 
-    <!-- Loader -->
+    {{--<!-- Loader -->
     <div id="preloader">
         <div id="status">
             <div class="spinner"></div>
         </div>
-    </div>
+    </div>--}}
 
     <!-- Begin page -->
     <div id="wrapper">
@@ -59,7 +59,7 @@
                         <li>
                             <a href="{{route('admin.index')}}" class="waves-effect">
                                 <i class="ti-home"></i>
-                                <span> Panel</span>
+                                <span>{{__('admin/index.dashboard')}}</span>
                             </a>
                         </li>
 
@@ -178,9 +178,9 @@
                                 </div>
                             </li>
 
-                            {{--<li class="list-inline-item dropdown notification-list">
+                            <li class="list-inline-item dropdown notification-list">
                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                {{__('admin/template.select_language')}}
+                                {{__('admin/index.select_language')}}
                                  </a>
                                  <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                  @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
@@ -189,7 +189,7 @@
                                   </a>
                                    @endforeach
                                  </div>
-                              </li>--}}
+                              </li>
 
                             <li class="list-inline-item dropdown notification-list">
                                 <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
