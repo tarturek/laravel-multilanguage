@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'tr',
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -161,10 +161,10 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
         Dimsav\Translatable\TranslatableServiceProvider::class,
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
-        TypiCMS\BootForms\BootFormsServiceProvider::class,
-
+        Barryvdh\TranslationManager\ManagerServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -227,9 +227,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
         'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
-        'BootForm' => TypiCMS\BootForms\Facades\BootForm::class,
-        'TranslatableBootForm' => TypiCMS\LaravelTranslatableBootForms\Facades\TranslatableBootForm::class,
 
     ],
 

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - lrvotelproje@localhost" uuid="23465f96-2d6a-4c9d-8726-ee1d3d203cf8">
+    <database-info product="MySQL" version="5.5.5-10.1.33-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="lrvotelproje"/>
+    <table name="anasayfa_ayar" schema="" catalog="lrvotelproje" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="video" sqlType="VARCHAR" precision="191" scale="0" nullable="false" jdbcType="12"/>
+      <column name="yorumlar" sqlType="VARCHAR" precision="191" scale="0" nullable="false" jdbcType="12"/>
+      <column name="teklifler" sqlType="VARCHAR" precision="191" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="anasayfa_ayar_translation_anasayfa_ayar_id_foreign" table="anasayfa_ayar_translation" schema="" catalog="lrvotelproje" columns="anasayfa_ayar_id"/>
+    </table>
+    <table name="anasayfa_ayar_translation" schema="" catalog="lrvotelproje" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="anasayfa_ayar_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="locale" sqlType="VARCHAR" precision="191" scale="0" nullable="false" jdbcType="12"/>
+      <column name="anasayfa_metin" sqlType="VARCHAR" precision="191" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="anasayfa_ayar_translation_anasayfa_ayar_id_foreign" columns="anasayfa_ayar_id" ref-table="anasayfa_ayar" ref-schema="" ref-catalog="lrvotelproje" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="anasayfa_ayar_translation_anasayfa_ayar_id_locale_unique" unique="true" columns="anasayfa_ayar_id,locale"/>
+      <index name="anasayfa_ayar_translation_locale_index" unique="false" columns="locale"/>
+    </table>
+    <table name="ayarlar" schema="" catalog="lrvotelproje" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="telefon" sqlType="VARCHAR" precision="13" scale="0" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="191" scale="0" nullable="true" jdbcType="12"/>
+      <column name="logo" sqlType="VARCHAR" precision="191" scale="0" nullable="true" jdbcType="12"/>
+      <column name="favicon" sqlType="VARCHAR" precision="191" scale="0" nullable="true" jdbcType="12"/>
+      <column name="googlemap" sqlType="VARCHAR" precision="555" scale="0" nullable="true" jdbcType="12"/>
+      <column name="facebook" sqlType="VARCHAR" precision="191" scale="0" nullable="true" jdbcType="12"/>
+      <column name="instagram" sqlType="VARCHAR" precision="191" scale="0" nullable="true" jdbcType="12"/>
+      <column name="twitter" sqlType="VARCHAR" precision="191" scale="0" nullable="true" jdbcType="12"/>
+      <column name="linkedin" sqlType="VARCHAR" precision="191" scale="0" nullable="true" jdbcType="12"/>
+      <column name="pinterest" sqlType="VARCHAR" precision="191" scale="0" nullable="true" jdbcType="12"/>
+      <column name="youtube" sqlType="VARCHAR" precision="191" scale="0" nullable="true" jdbcType="12"/>
+      <column name="parabirimi" sqlType="VARCHAR" precision="191" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="ayarlar_translation_ayarlar_id_foreign" table="ayarlar_translation" schema="" catalog="lrvotelproje" columns="ayarlar_id"/>
+    </table>
+    <table name="ayarlar_translation" schema="" catalog="lrvotelproje" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ayarlar_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="locale" sqlType="VARCHAR" precision="191" scale="0" nullable="true" jdbcType="12"/>
+      <column name="site_adi" sqlType="VARCHAR" precision="191" scale="0" nullable="true" jdbcType="12"/>
+      <column name="footer_yazisi" sqlType="VARCHAR" precision="191" scale="0" nullable="true" jdbcType="12"/>
+      <column name="footerinfo" sqlType="VARCHAR" precision="191" scale="0" nullable="true" jdbcType="12"/>
+      <column name="firma_adres" sqlType="VARCHAR" precision="191" scale="0" nullable="true" jdbcType="12"/>
+      <column name="anasayfametin" sqlType="VARCHAR" precision="555" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="ayarlar_translation_ayarlar_id_foreign" columns="ayarlar_id" ref-table="ayarlar" ref-schema="" ref-catalog="lrvotelproje" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="ayarlar_translation_ayarlar_id_locale_unique" unique="true" columns="ayarlar_id,locale"/>
+      <index name="ayarlar_translation_locale_index" unique="false" columns="locale"/>
+    </table>
+    <table name="ltm_translations" schema="" catalog="lrvotelproje" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="locale" sqlType="VARCHAR" precision="191" scale="0" nullable="false" jdbcType="12"/>
+      <column name="group" sqlType="VARCHAR" precision="191" scale="0" nullable="false" jdbcType="12"/>
+      <column name="key" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="value" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="migrations" schema="" catalog="lrvotelproje" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="migration" sqlType="VARCHAR" precision="191" scale="0" nullable="false" jdbcType="12"/>
+      <column name="batch" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="page_translation" schema="" catalog="lrvotelproje" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="page_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="locale" sqlType="VARCHAR" precision="191" scale="0" nullable="false" jdbcType="12"/>
+      <column name="baslik" sqlType="VARCHAR" precision="191" scale="0" nullable="true" jdbcType="12"/>
+      <column name="icerik" sqlType="VARCHAR" precision="555" scale="0" nullable="true" jdbcType="12"/>
+      <column name="slug" sqlType="VARCHAR" precision="191" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="page_translation_page_id_foreign" columns="page_id" ref-table="pages" ref-schema="" ref-catalog="lrvotelproje" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="page_translation_page_id_locale_unique" unique="true" columns="page_id,locale"/>
+      <index name="page_translation_locale_index" unique="false" columns="locale"/>
+    </table>
+    <table name="pages" schema="" catalog="lrvotelproje" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="resim" sqlType="VARCHAR" precision="191" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="page_translation_page_id_foreign" table="page_translation" schema="" catalog="lrvotelproje" columns="page_id"/>
+    </table>
+    <table name="password_resets" schema="" catalog="lrvotelproje" type="TABLE">
+      <column name="email" sqlType="VARCHAR" precision="191" scale="0" nullable="false" jdbcType="12"/>
+      <column name="token" sqlType="VARCHAR" precision="191" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <index name="password_resets_email_index" unique="false" columns="email"/>
+    </table>
+    <table name="users" schema="" catalog="lrvotelproje" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="191" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="191" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email_verified_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="password" sqlType="VARCHAR" precision="191" scale="0" nullable="false" jdbcType="12"/>
+      <column name="remember_token" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="users_email_unique" unique="true" columns="email"/>
+    </table>
+  </data-source>
+</component>

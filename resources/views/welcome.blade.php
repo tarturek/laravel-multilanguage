@@ -7,7 +7,7 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -85,34 +85,15 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
+                    <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
+                    <a href="https://blog.laravel.com">Blog</a>
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
-
-                <div><br>{{trans('welcome.mevcut_dil')}} : {{Lang::getLocale()}}</div>
-                <div>{{trans('welcome.merhaba')}}</div>
-                <br>
-                <div>
-                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-
-                	<li>
-
-                		<a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, '/', [], true) }}">
-
-                			{{ $properties['native'] }}
-
-                		</a>
-
-                	</li>
-
-                	@endforeach
-                </div>
             </div>
-
         </div>
     </body>
 </html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - lrvotelproje@localhost" uuid="23465f96-2d6a-4c9d-8726-ee1d3d203cf8">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>lrvotelproje.*</schema-pattern>
+      <default-schemas>lrvotelproje.*</default-schemas>
+    </data-source>
+  </component>
+</project>
+
